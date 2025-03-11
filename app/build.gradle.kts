@@ -36,6 +36,10 @@ android {
     }
     buildFeatures {
         compose = true
+//        viewBinding = true  *Opción 2*
+    }
+    viewBinding{ // Opción 1
+        enable = true
     }
 }
 

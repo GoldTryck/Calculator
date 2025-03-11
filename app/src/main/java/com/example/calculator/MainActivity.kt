@@ -2,21 +2,36 @@ package com.example.calculator
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.calculator.ui.theme.CalculatorTheme
+import com.example.calculator.databinding.ActivityMainBinding
 
 class MainActivity : ComponentActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
+
+        var resultado = 0;
+        var suma = false;
+        var resta = false;
+        var mult = false;
+        var div = false;
+
+        binding.puntoButton.setOnClickListener{
+            if (!binding.salida.text.contains("."))
+                binding.salida.text="${binding.salida.text}"
+        }
+
+        binding.masMenos.setOnClickListener{
+            binding.salida.text = String.format((binding.salida.text.toString().toDouble() * -1).toString())
+        }
+
+        binding.porcent.setOnClickListener {
+
+        }
     }
 }

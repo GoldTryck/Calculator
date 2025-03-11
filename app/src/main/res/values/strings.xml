@@ -20,5 +20,5 @@
     <string name="text_mas_button">+</string>
     <string name="text_menos_button">-</string>
     <string name="text_ops">HERE OPS</string>
-    <string name="text_result">0</string>
+    <string name="text_result">01</string>
 </resources>
